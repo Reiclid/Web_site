@@ -1,6 +1,7 @@
 :root {
     --slide-width: 100vw;
     --slide-height: 100vh;
+    --Text-mem: "USA - suck";
 }
 
 html, body {
@@ -14,6 +15,44 @@ html, body {
     font-weight: 500;
     font-style: normal;
 }
+@media (min-width: 600px) {
+    html {
+        font-size: 18px; /* Збільшити шрифт на середніх екранах */
+    }
+}
+
+@media (min-width: 900px) {
+    html {
+        p{
+            font-size: 24px; /* Збільшити шрифт на великих екранах */
+        }
+        
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        p{
+            font-size: 30px; /* Збільшити шрифт на великих екранах */
+        }
+    }
+}
+.mem {
+    position: absolute;
+    top: 0px;
+    color: rgba(0, 0, 0, 0.01);
+    margin: 10px;
+    z-index: 1;
+}
+
+.mem_2 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100px; /* змінено ширину для видимості */
+    opacity: 0.2;
+    z-index: 1;
+}
 
 .slider {
     position: relative;
@@ -24,7 +63,7 @@ html, body {
 .slides {
     display: flex;
     flex-direction: column; /* Вертикальне розташування слайдів */
-    height: calc(var(--slide-height) * 3); /* Загальна висота всіх слайдів */
+    height: calc(var(--slide-height) * 11); /* Загальна висота всіх слайдів */
     transition: transform 0.5s ease-in-out;
 }
 
@@ -38,29 +77,35 @@ html, body {
     align-items: center;
     background: #f2f2f2;
     border-bottom: 1px solid #ccc;
-
-    p{
-        display: flex;
+    P{
         width: 80%;
+        display: flex;
         justify-content: center;
     }
+    position: relative;
+    overflow: hidden;
 }
 
 .slide img {
     margin-top: 20px; /* Відступ зверху для картинки */
     max-width: 80%; /* Максимальна ширина картинки */
     height: auto;
+    max-height: 65%;
 }
 
 .nav-button {
     position: absolute;
     right: 20px;
+    width: 30px;
+    height: 30px;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
-    padding: 10px;
     cursor: pointer;
+    &:hover{
+        background: rgba(0, 0, 0, 1);
+    }
 }
 
 #prev {
@@ -70,3 +115,4 @@ html, body {
 #next {
     bottom: 45%;
 }
+
