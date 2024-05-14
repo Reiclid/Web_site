@@ -1,0 +1,72 @@
+:root {
+    --slide-width: 100vw;
+    --slide-height: 100vh;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slides {
+    display: flex;
+    flex-direction: column; /* Вертикальне розташування слайдів */
+    height: calc(var(--slide-height) * 3); /* Загальна висота всіх слайдів */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: var(--slide-width);
+    height: var(--slide-height);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column; /* Вертикальне розташування вмісту слайда */
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    border-bottom: 1px solid #ccc;
+
+    p{
+        display: flex;
+        width: 80%;
+        justify-content: center;
+    }
+}
+
+.slide img {
+    margin-top: 20px; /* Відступ зверху для картинки */
+    max-width: 80%; /* Максимальна ширина картинки */
+    height: auto;
+}
+
+.nav-button {
+    position: absolute;
+    right: 20px;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#prev {
+    top: 45%;
+}
+
+#next {
+    bottom: 45%;
+}
